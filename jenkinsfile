@@ -1,0 +1,42 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Deploy') {
+            steps {
+                sh '''
+                ssh -o StrictHostKeyChecking=no \
+                -i /home/ubuntu/wordpress-key.pem \
+                ec2-user@15.152.74.147 << EOF
+
+                docker rm -f mywordpress mydb || true
+
+                docker pull mysql:8.0
+                docker pull wordpress
+
+                docker run -d \
+                --name mydb \
+                -e MYSQL_ROOT_PASSWORD=root \
+                -e MYSQL_DATABASE=wordpressdb \
+                mysql:8.0
+
+                sleep 30
+
+                docker run -d \
+                --name mywordpress \
+                --link mydb:mysql \
+                -p 32768:80 \
+                -e WORDPRESS_DB_HOST=mydb:3306 \
+                -e WORDPRESS_DB_USER=root \
+                -e WORDPRESS_DB_PASSWORD=root \
+                -e WORDPRESS_DB_NAME=wordpressdb \
+                wordpress
+
+                docker ps
+
+                EOF
+                '''
+            }
+        }
+    }
+}
