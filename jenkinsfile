@@ -7,7 +7,7 @@ pipeline {
                 sh '''
                 ssh -o StrictHostKeyChecking=no \
                 -i /var/lib/jenkins/wordpress-key.pem \
-                ec2-user@15.152.116.135 << EOF
+                ec2-user@15.168.139.230 << EOF
 
                 docker rm -f mywordpress mydb || true
 
