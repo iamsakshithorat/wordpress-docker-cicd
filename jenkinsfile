@@ -6,7 +6,7 @@ pipeline {
             steps {
                 sh '''
                 ssh -o StrictHostKeyChecking=no \
-                -i /home/ubuntu/wordpress-key.pem \
+                -i /var/lib/jenkins/wordpress-key.pem \
                 ec2-user@15.152.116.135 << EOF
 
                 docker rm -f mywordpress mydb || true
@@ -15,22 +15,22 @@ pipeline {
                 docker pull wordpress
 
                 docker run -d \
-                --name mydb \
-                -e MYSQL_ROOT_PASSWORD=root \
-                -e MYSQL_DATABASE=wordpressdb \
-                mysql:8.0
+                  --name mydb \
+                  -e MYSQL_ROOT_PASSWORD=root \
+                  -e MYSQL_DATABASE=wordpressdb \
+                  mysql:8.0
 
                 sleep 30
 
                 docker run -d \
-                --name mywordpress \
-                --link mydb:mysql \
-                -p 32768:80 \
-                -e WORDPRESS_DB_HOST=mydb:3306 \
-                -e WORDPRESS_DB_USER=root \
-                -e WORDPRESS_DB_PASSWORD=root \
-                -e WORDPRESS_DB_NAME=wordpressdb \
-                wordpress
+                  --name mywordpress \
+                  --link mydb:mysql \
+                  -p 32768:80 \
+                  -e WORDPRESS_DB_HOST=mydb:3306 \
+                  -e WORDPRESS_DB_USER=root \
+                  -e WORDPRESS_DB_PASSWORD=root \
+                  -e WORDPRESS_DB_NAME=wordpressdb \
+                  wordpress
 
                 docker ps
 
