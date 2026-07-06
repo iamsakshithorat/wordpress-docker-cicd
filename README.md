@@ -98,3 +98,19 @@ Whenever code is pushed to GitHub, Jenkins automatically triggers the pipeline, 
 ## Author
 
 Sakshi Thorat
+
+<img width="1918" height="912" alt="Image" src="https://github.com/user-attachments/assets/dcc74606-715f-4d9d-a52a-f56716b70e7f" />
+
+<img width="1918" height="917" alt="Image" src="https://github.com/user-attachments/assets/348a89d2-ec7f-4f57-b21c-08e484d58ada" />
+
+<img width="1911" height="803" alt="Image" src="https://github.com/user-attachments/assets/8aa5f056-fb28-4282-8893-295c327189b4" />
+
+<img width="1907" height="970" alt="Image" src="https://github.com/user-attachments/assets/b4be07dc-f222-4c43-aaa8-24584d87c832" />
+
+<img width="1901" height="976" alt="Image" src="https://github.com/user-attachments/assets/0336f2af-2e20-4bc9-87fd-ea42a369664e" />
+
+<img width="1915" height="901" alt="Image" src="https://github.com/user-attachments/assets/f5e0f8af-380b-4226-85d2-44e06de78d32" />
+
+<img width="1907" height="532" alt="Image" src="https://github.com/user-attachments/assets/f30c75d1-9f3b-434f-a311-46244a6afdaf" />
+
+<img width="1913" height="1006" alt="Image" src="https://github.com/user-attachments/assets/88730348-3b1f-46f1-8f49-649be177a51b" />
